@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::redirect('/', '/animals');
+
+Route::get('/animals', function () {
+    return view('main');
+});
+
+Route::get('animal/edit/{id}', function () {
+    return view('animals.edit');
+});
+
+Route::get('animal/create', function () {
+    return view('animals.create');
 });
