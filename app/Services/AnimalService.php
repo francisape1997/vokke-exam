@@ -48,6 +48,7 @@ class AnimalService
                 }
             })
 
+        ->orderBy('created_at', 'DESC')
         ->paginate(request()->query('per_page'));
     }
 
